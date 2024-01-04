@@ -1,5 +1,7 @@
 "use client";
 import AddExercise from "@/components/AddExercise";
+import Header from "@/components/Header";
+
 import React, { useEffect, useState } from "react";
 
 function page() {  
@@ -19,7 +21,8 @@ function page() {
   // }, [])
 
   return (
-    <div className="bg-black">
+    <div className="">
+      <Header />
       <AddExercise />
     </div>
   )
