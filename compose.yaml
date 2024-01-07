@@ -6,11 +6,9 @@ services:
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: postgres
+      POSTGRES_DB: gymmie
     ports:
       - 5432:5432
-    volumes:
-      - pgdata:/var/lib/postgresql/data
   server:
     container_name: server_c
     build: ./server
@@ -29,6 +27,3 @@ services:
       - ./client:/app
     stdin_open: true
     tty: true
-
-volumes:
-  pgdata: {}

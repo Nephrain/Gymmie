@@ -21,10 +21,7 @@ function page() {
   // }, [])
 
   return (
-    <div className="">
-      <Header />
-      <AddExercise />
-    </div>
+    <div></div>
   )
 }
 
