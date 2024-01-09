@@ -23,4 +23,15 @@ router.get("/:name/get_id", async (req, res) => {
     }
 })
 
+router.get("/:id", async (req, res) => {
+    const exercise_id = req.params.id;
+    try {
+        const response = await pool.query("SELECT * FROM exercise WHERE id = $1", [exercise_id]);
+        res.status(200).send(response.rows[0]);
+    } catch (err) {
+        console.log(err);
+        res.sendStatus(500);
+    }
+})
+
 module.exports = router;

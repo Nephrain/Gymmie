@@ -30,7 +30,7 @@ router.get("/:id", async (req, res) => {
 router.get("/:id/exercises", async (req, res) => {
   const workout_id = req.params.id;
   try {
-    const exercise_id = await pool.query("SELECT exercise_id FROM workout_exercise WHERE workout_id = $1", [workout_id]);
+    const response = await pool.query("SELECT exercise_id FROM workout_exercise WHERE workout_id = $1", [workout_id]);
     res.status(200).send(response.rows);
   } catch (err) {
     console.log(err);
