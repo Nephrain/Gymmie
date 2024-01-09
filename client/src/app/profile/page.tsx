@@ -1,9 +1,8 @@
-function Page() {
-  return (
-    <div>
+import { redirect } from "next/navigation";
 
-    </div>
-  )
+function Page() {
+  const id = 1;
+  redirect(`/user/${id}/profile`);
 }
 
 export default Page;

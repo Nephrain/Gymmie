@@ -1,6 +1,5 @@
 const express = require("express");
 const cors = require("cors");
-const pool = require("./db/index")
 const PORT = 4000;
 
 const app = express();
@@ -13,9 +12,11 @@ app.use(express.urlencoded());
 // Routing
 const userRouter = require("./routes/user");
 const workoutRouter = require("./routes/workout");
+const exerciseRouter = require("./routes/exercise");
 
-app.use("/user", userRouter);
-app.use("/workout", workoutRouter);
+app.use("/api/user", userRouter);
+app.use("/api/workout", workoutRouter);
+app.use("/api/exercise", exerciseRouter);
 
 
 app.listen(PORT, () => {

@@ -1,14 +1,7 @@
-"use client"
-import AddExercise from "@/components/AddExercise";
-import NewWorkout from "@/components/NewWorkout";
+import { redirect } from "next/navigation";
 
 function Page() {
-  return (
-    <div>
-      <NewWorkout />
-      <AddExercise />
-    </div>
-  )
+  redirect("/workout/new");
 }
 
 export default Page;

@@ -9,6 +9,8 @@ services:
       POSTGRES_DB: gymmie
     ports:
       - 5432:5432
+    volumes:
+      - ./server/db/init.sql:/docker-entrypoint-initdb.d/init.sql
   server:
     container_name: server_c
     build: ./server
