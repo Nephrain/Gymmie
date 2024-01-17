@@ -18,7 +18,7 @@ router.get("/:id", async (req, res) => {
   try {
     const result = await pool.query("SELECT * FROM profile WHERE id = $1", [user_id]);
     if (result.rows.length > 0) {
-      res.status(200).json(result.rows[0]);
+      res.status(200).json(result.rows);
     } else {
       res.status(404).send('User not found');
     }
@@ -30,10 +30,9 @@ router.get("/:id", async (req, res) => {
 
 router.get("/:id/workouts", async (req, res) => {
   const user_id = req.params.id;
-  
   try {
     const result = await pool.query("SELECT * FROM workout WHERE user_id = $1", [user_id]);
-    if (result.rows.length > 0) {
+    if (result.rows.length > 0) { 
       res.status(200).json(result.rows);
     } else {
       res.status(404).send('No workouts found');
