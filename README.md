@@ -1,1 +1,1 @@
-Full stack PERN workout tracker.
+Full stack workout tracker. Built using PostgreSQL, Express.js, Next.js, and Node.js.
